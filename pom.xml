@@ -1,0 +1,63 @@
+<project	xmlns="http://maven.apache.org/POM/4.0.0" 
+			xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+			xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.mychamp.nacl</groupId>
+  <artifactId>com.mychamp.nacl.demo</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <packaging>jar</packaging>
+  
+  <name>NaCl_Demo</name>
+  <description>A demonstration of the Kalium wrappers for the libsodium library. 
+  You must have libsodium native libraries installed on target machine.</description>
+  
+  <dependencies>
+  	<dependency>
+  		<groupId>org.abstractj.kalium</groupId>
+  		<artifactId>kalium</artifactId>
+  		<version>0.4.0</version>
+  	</dependency>
+  </dependencies>
+  
+  <build>
+  	<plugins>
+  		<plugin>
+		    <groupId>org.apache.maven.plugins</groupId>
+		    <artifactId>maven-dependency-plugin</artifactId>
+		    <executions>
+		        <execution>
+		            <id>copy-dependencies</id>
+		            <phase>prepare-package</phase>
+		            <goals>
+		                <goal>copy-dependencies</goal>
+		            </goals>
+		            <configuration>
+		                <outputDirectory>${project.build.directory}/lib</outputDirectory>
+		                <overWriteReleases>false</overWriteReleases>
+		                <overWriteSnapshots>false</overWriteSnapshots>
+		                <overWriteIfNewer>true</overWriteIfNewer>
+		            </configuration>
+		        </execution>
+		    </executions>
+		</plugin>
+  		
+  		<plugin>
+  			<groupId>org.apache.maven.plugins</groupId>
+	        <artifactId>maven-jar-plugin</artifactId>
+	        <version>2.6</version>
+	        <configuration>
+	        	<finalName>LibSodiumDemo</finalName>
+	        	<archive>
+	        		<manifest>
+	        			<addClasspath>true</addClasspath>
+	        			<mainClass>com.mychamp.nacl.App</mainClass>
+	        			<classpathPrefix>lib/</classpathPrefix>
+	        		</manifest>
+	        	</archive>
+	        </configuration>
+  		</plugin>
+  	</plugins>
+  </build>
+  
+  
+</project>
