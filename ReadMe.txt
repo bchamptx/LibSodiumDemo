@@ -21,8 +21,7 @@ To run:
 	cd to target directory containing jar and lib directory as created by maven build process.
 	java -jar LibSodiumDemo.jar
 
-Expected output. Note: Hex strings will be different each time you execute because new keys and nonce are 
-generated each time you run.:
+Expected output. Note: Hex strings will be different each time you execute because new keys and nonce are generated each time you run.:
 
 Alice's public key as listed on her web site: e7c43ffa1be155092a21d858123181b69a8f50c8830ed99e1c3ffc4b9ffec426
 Bob's public key as listed on his web site: 767b3a20893973b926ee92931a1db6813239c43a342dd62b4d9c731241c15644
