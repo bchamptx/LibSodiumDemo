@@ -1,3 +1,5 @@
+by Bill Champ
+
 LibSodium is a cryptographic library that is targeted for ease of use.
 See https://www.gitbook.com/book/jedisct1/libsodium/details
     or
